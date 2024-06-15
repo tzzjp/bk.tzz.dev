@@ -1,5 +1,7 @@
 ---
-import BaseHead from "@/components/layout/head/base-head.astro";
+import BaseHead from '@/components/layout/head/base-head.astro';
+import Header from '@/components/layout/header/index.astro';
+import Footer from '@/components/layout/footer/index.astro';
 const lang = Astro.currentLocale;
 const { title, description } = Astro.props;
 ---
@@ -7,6 +9,10 @@ const { title, description } = Astro.props;
 <html lang={lang} class="scroll-smooth">
 <BaseHead title={title} description={description} />
 <body class="flex flex-col min-h-screen">
-  <slot />
+  <Header />
+  <main class="flex-grow">
+    <slot />
+  </main>
+  <Footer />
 </body>
 </html>

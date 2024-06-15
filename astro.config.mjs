@@ -9,5 +9,9 @@ export default defineConfig({
     react(), 
     tailwind({
       applyBaseStyles: false,
-    })]
+    })],
+    i18n: {
+      defaultLocale: "ja",
+      locales: ["ja"]
+    },
 });

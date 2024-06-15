@@ -1,13 +1,14 @@
 ---
 import '@/styles/globals.css';
+import ViewTransitions from 'astro/components/ViewTransitions.astro';
 import Meta from './meta.astro';
 import Title from './title.astro';
 import Icon from './icon.astro';
 const { title, description, keywords, author } = Astro.props;
-import { Debug } from 'astro:components';
 ---
 <head>
   <Meta description={description} keywords={keywords} author={author} />
   <Title title={title} />
   <Icon />
+  ViewTransitions
 </head>

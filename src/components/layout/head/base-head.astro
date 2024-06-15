@@ -1,0 +1,11 @@
+---
+import '@/styles/globals.css';
+import Meta from './meta.astro';
+import Title from './title.astro';
+const { title, description, keywords, author } = Astro.props;
+import { Debug } from 'astro:components';
+---
+<head>
+  <Meta description={description} keywords={keywords} author={author} />
+  <Title title={title} />
+</head>

@@ -1,15 +1,12 @@
 ---
-import '@/styles/globals.css';
+import BaseHead from "@/components/layout/head/base-head.astro";
 const lang = Astro.currentLocale;
+const { title, description } = Astro.props;
 ---
 <!DOCTYPE html>
-<html lang={lang}>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
+<html lang={lang} class="scroll-smooth">
+<BaseHead title={title} description={description} />
+<body class="flex flex-col min-h-screen">
   <slot />
 </body>
 </html>

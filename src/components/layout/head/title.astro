@@ -1,10 +1,7 @@
 ---
 import { siteConfig } from '@/config/index';
 const { title } = Astro.props;
-const homeTitle = title ? title : siteConfig.name;
-const pageTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.name;
-const finalTitle = Astro.url.pathname === '/' ? homeTitle : pageTitle;
 ---
 <title>
-  {finalTitle}
+  {title ? `${title} | ${siteConfig.name}` : siteConfig.name}
 </title>

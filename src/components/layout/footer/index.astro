@@ -1,6 +1,21 @@
 ---
-
+import { siteConfig } from "@/config";
+const twtterLink = "https://x.com/" + siteConfig.sns?.twitter; 
 ---
-<footer class="border-t">
-  footer.
+<footer class="border-t py-4 bg-gray-200">
+  <div class="container flex items-center justify-between">
+    <p class="text-left text-sm">
+      Built by{"  "}
+      <a
+        href={twtterLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-medium underline underline-offset-4"
+      >
+        tzz
+      </a>
+    </p>
+    <p class="text-sm">&copy; 2024 {siteConfig.name}</p>
+    <p class=""></p>
+  </div>
 </footer>

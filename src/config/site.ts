@@ -5,5 +5,9 @@ export const siteConfig = {
     'se',
     'システム開発',
     'システムエンジニア'
-  ]
+  ],
+  sns: {
+    twitter: 'tzzjp',
+    github: 'tzzjp'
+  }
 }

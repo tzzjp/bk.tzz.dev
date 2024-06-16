@@ -1,6 +1,46 @@
 ---
-
+import { Origami, Github, Twitter } from "lucide-react";
+import { siteConfig } from "@/config";
+import NavMenu from './nav-menu';
 ---
-<header>
-  header.
+<header class="flex items-center h-16 md:h-18 sticky top-0 bg-slate-100 border-b">
+  <div class="relative container flex items-center justify-between w-full">
+    <!-- left nav -->
+    <div class="flex items-center gap-6 md:gap-8 lg:gap-10">
+      <a href="/" class="hidden items-center space-x-2 md:flex">
+        <Origami />
+        <span class="hidden font-bold sm:inline-block">{siteConfig.name}</span>
+      </a>
+
+      <!-- <Nav /> -->
+      <NavMenu client:load />
+    </div>
+
+    <!-- center -->
+    <div></div>
+
+    <!-- right nav -->
+    <div class="flex items-center gap-x-4">
+      <a
+        href={siteConfig.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="github"
+      >
+        <Github />
+      </a>
+
+      <a
+        href={`https://x.com/${siteConfig.sns?.twitter}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="twitter"
+      >
+        <Twitter />
+      </a>
+    </div>
+  </div>
+
+  <!-- <NavMenu client:load /> -->
+  
 </header>

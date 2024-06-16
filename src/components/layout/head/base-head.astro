@@ -3,12 +3,12 @@ import '@/styles/globals.css';
 import ViewTransitions from 'astro/components/ViewTransitions.astro';
 import Meta from './meta.astro';
 import Title from './title.astro';
-import Icon from './icon.astro';
+import Link from './link.astro';
 const { title, description, keywords, author } = Astro.props;
 ---
 <head>
   <Meta description={description} keywords={keywords} author={author} />
   <Title title={title} />
-  <Icon />
+  <Link />
   <ViewTransitions />
 </head>

@@ -20,6 +20,7 @@ export default function Nav() {
               {
                 navMenu.links.map((link) => (
                   <a
+                    key={link.href}
                     href={link.href}
                     target={`${link.target} ? ${link.target} : _blank`}
                     className={navigationMenuTriggerStyle()}

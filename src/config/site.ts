@@ -1,6 +1,6 @@
 import type { SiteConfig } from "@/types";
 
-export const siteConfig = {
+export const siteConfig: SiteConfig = {
   keywords: [
     'se',
     'システム開発',

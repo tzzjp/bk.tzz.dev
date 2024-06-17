@@ -22,7 +22,7 @@ export default function Nav() {
                   <a
                     key={link.href}
                     href={link.href}
-                    target={`${link.target} ? ${link.target} : _blank`}
+                    // target={`${link.target} ? ${link.target} : _blank`}
                     className={navigationMenuTriggerStyle()}
                   >
                     {link.title}

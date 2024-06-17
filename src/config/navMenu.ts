@@ -5,6 +5,10 @@ export const navMenu: NavMenu = {
     {
       title: 'FrontEnd',
       href: '/blog/frontend'
+    },
+    {
+      title: 'Backend',
+      href: '/blog/backend'
     }
   ]
 }

@@ -7,11 +7,11 @@ export async function getStaticPaths() {
   const blogs = await getCollection('blog');
   const blogsWithGitInfo = await Promise.all(
     blogs.map(async (post) => {
-      const gitInfo = await getGitInfo(post.slug);
+      const gitInfo = await getGitInfo("./src/content/blog/" + post.id);
       if(gitInfo === null) {
         return post;
       } else {
-        return { ...post, ...gitInfo }
+        return { ...post, data: {...(post.data || {}), ...gitInfo} }
       }
     })
   );
@@ -24,7 +24,9 @@ export async function getStaticPaths() {
 
 const post = Astro.props;
 const { Content } = await post.render();
+import { Debug } from "astro:components";
 ---
+<Debug {post}/>
 <BlogLayout title={post.data.title} description={post.data.description}>
   <Content />
 </BlogLayout>

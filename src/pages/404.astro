@@ -1,0 +1,20 @@
+---
+import BaseLayout from "@/layouts/base-layout.astro";
+import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+---
+<BaseLayout>
+  <div class="flex-1 flex flex-col items-center justify-center">
+    <div class="flex space-x-5">
+      <h1 class="text-xl">404</h1>
+      <Separator orientation="vertical" />
+      <span>ページが見つかりません。</span>
+    </div>
+    <div class="w-80 my-5">
+      <Separator />
+    </div>
+    <Button>
+      <a href="/">ホームに戻る</a>
+    </Button>
+  </div>
+</BaseLayout>

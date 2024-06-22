@@ -6,8 +6,6 @@ import BlogLayout from "@/layouts/blog-layout.astro";
 export async function getStaticPaths() {
   const paths = await getCollection('blog');
   const blogs = paths.filter(entry => !entry.id.endsWith('index.md'));
-
-  const categories = paths.filter(entry => entry.id.endsWith('index.md'));
   const blogsWithGitInfo = await Promise.all(
     blogs.map(async (post) => {
       const gitInfo = await getGitInfo("./src/content/blog/" + post.id);

@@ -1,5 +1,4 @@
 import moment from 'moment';
-
 import { 
   Card,
   CardHeader,
@@ -12,7 +11,7 @@ import {
 interface BlogCardProps {
   slug: string;
   title: string;
-  pubDate?: Date;
+  pubDate?: string;
   description?: string;
 }
 
@@ -21,7 +20,7 @@ export function BlogCard({slug, title, pubDate, description}: BlogCardProps) {
     <Card className='my-5'>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
-        <CardDescription>発表時間：{moment(pubDate).format('YYYY/MM/DD hh:mm')}</CardDescription>
+        <CardDescription>発表時間：{pubDate}</CardDescription>
       </CardHeader>
       <CardContent className='truncate'>{description}</CardContent>
       <CardFooter className='underline'>

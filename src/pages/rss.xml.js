@@ -1,14 +1,26 @@
 import rss from "@astrojs/rss";
 import { siteConfig } from "@/config";
 import { getCollection } from "astro:content";
+import { getGitInfo } from "@/lib/git";
+
 
 export async function GET(content) {
-  const blog = await getCollection('blog');
+  const blogs = await getCollection('blog');
+  const blogsWithGitInfo = await Promise.all(
+    blogs.map(async (post) => {
+      const gitInfo = await getGitInfo("./src/content/blog/" + post.id);
+      if(gitInfo === null) {
+        return post;
+      } else {
+        return { ...post, data: { ...gitInfo, ...(post.data || {})} }
+      }
+    })
+  );
   return rss({
     title: siteConfig.name,
     description: siteConfig.description,
     site: content.site,
-    items: blog.map((post) => ({
+    items: blogsWithGitInfo.map((post) => ({
       ...post.data,
       link: `/blog/${post.slug}`,
     })),

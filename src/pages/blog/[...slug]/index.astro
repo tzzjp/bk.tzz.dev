@@ -2,6 +2,7 @@
 import { getGitInfo } from "@/lib/git";
 import { getCollection } from "astro:content";
 import BlogListLayout from "@/layouts/blog-list-layout.astro";
+import { BlogCard } from "@/components/layout/blog-card";
 
 export async function getStaticPaths() {
   const slugs = (await getCollection('blog')).filter(entry => entry.id.endsWith('index.md'));
@@ -30,14 +31,14 @@ const { entry, blogs } = Astro.props;
 const { Content } = await entry.render();
 ---
 <BlogListLayout title={entry.data.title} description={entry.data.description}>
-  <Content />
-  <ul>
+  <div class="mt-5 text-center">
+    <Content />
+  </div>
+  
+  <ul class="flex flex-col">
     {blogs.map(blog => (
       <li>
-        <a href={`/blog/${blog.slug}`}>
-          {blog.data.title}
-        </a>
-        {/* <p>{blog.data.description}</p> */}
+        <BlogCard slug={blog.slug} title={blog.data.title} pubDate={blog.data.pubDate} description={blog.data.description} />
       </li>
     ))}
   </ul>

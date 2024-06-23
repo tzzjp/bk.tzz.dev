@@ -4,11 +4,11 @@ export const navMenu: NavMenu = {
   links: [
     {
       title: 'FrontEnd',
-      href: '/blog/frontend'
+      href: '/frontend'
     },
     {
       title: 'Backend',
-      href: '/blog/backend'
+      href: '/backend'
     }
   ]
 }

@@ -9,6 +9,14 @@ export const navMenu: NavMenu = {
     {
       title: 'Backend',
       href: '/backend'
+    },
+    {
+      title: 'DevOps',
+      href: '/devops'
+    },
+    {
+      title: 'Tool',
+      href: '/tools'
     }
   ]
 }
